@@ -15,7 +15,7 @@ use mvcobjet\Models\Entities\Genre;
 */
 
 use mvcobjet\Models\Services\GenreService; 
-/* use Twig\Environment; */
+use Twig\Environment;
 
 
 class FrontController

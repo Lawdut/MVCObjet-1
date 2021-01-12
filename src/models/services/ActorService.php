@@ -21,4 +21,12 @@ class ActorService {
         $actors = $this->actorDao->findAll();
         return $actors;
     }
+
+    public function getOneActor($id) {
+
+        $actor = $this->actorDao->findOne($id);
+        //print_r($actor);
+        return $actor;
+
+    }
 }

@@ -46,8 +46,21 @@ $klein->respond('GET','/genres', function() use($fc) {
 });
 
 $klein->respond('GET','/actors', function() use($fc) {
-    
-    $fc->actors();
+
+    $fc->actorS();
+});
+
+$klein->respond('GET', '/actor/[:id]', function($request) use($fc) {
+    $fc->Actor($request->id);
+});
+
+$klein->respond('GET','/directors', function() use($fc) {
+
+    $fc->directorS();
+});
+
+$klein->respond('GET', '/director/[:id]', function($request) use($fc) {
+    $fc->director($request->id);
 });
 
 $klein->dispatch(); 

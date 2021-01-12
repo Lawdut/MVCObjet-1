@@ -16,6 +16,7 @@ use mvcobjet\Models\Entities\Genre;
 
 use mvcobjet\Models\Services\GenreService; 
 use mvcobjet\Models\Services\ActorService;
+use mvcobjet\Models\Services\DirectorService;
 use Twig\Environment;
 
 
@@ -23,6 +24,7 @@ class FrontController
 {
     private $genreService ;
     private $actorService;
+    private $directorService;
     private $twig;
 
     public function __construct($twig){
@@ -30,6 +32,7 @@ class FrontController
         // instanciation du service Genre
         $this->genreService = new GenreService();
         $this->actorService = new ActorService();
+        $this->directorService = new DirectorService();
         $this->twig = $twig;
     }
 
@@ -60,7 +63,7 @@ class FrontController
 
     }
 
-    public function actors() {
+    public function actorS() {
         
        
        $actors = $this->actorService->getAllActors();
@@ -70,5 +73,24 @@ class FrontController
        
        echo $this->twig->render('actor.html.twig', [ "actors" => $actors ] );
 
+    }
+
+    public function actor($id) {
+
+        $actors = $this->actorService->getOneActor($id);
+        //print_r($actors);
+        echo $this->twig->render('actor.html.twig', [ "actors" => $actors ] );
+    }
+
+    public function directorS() {
+
+        $directors = $this->directorService->getAllDirectors();
+        echo $this->twig->render('director.html.twig', [ "directors" => $directors ] );
+    }
+
+    public function director($id) {
+        $directors = $this->directorService->getOneDirector($id);
+        //print_r($directors);
+        echo $this->twig->render('director.html.twig', [ "directors" => $directors ] );
     }
 }

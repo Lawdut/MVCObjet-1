@@ -2,51 +2,51 @@
 
 namespace mvcobjet\Models\Daos;
 
-use mvcobjet\Models\Entities\Actor;
+use mvcobjet\Models\Entities\Director;
 
-class ActorDao extends BaseDao {
+class DirectorDao extends BaseDao {
 
     public function findAll(){
-        $stmt = $this->db->prepare("SELECT * FROM actor ");
+        $stmt = $this->db->prepare("SELECT * FROM director ");
         $res = $stmt->execute();
         if ($res) {
-            $actors = [];
+            $directors = [];
             while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-                $actors[] = $this->createObjectFromFields($row);
+                $directors[] = $this->createObjectFromFields($row);
             }
-            return $actors;
+            return $directors;
         } else {
             throw new \PDOException($stmt->errorInfo()[2]);
         }
     }
 
     public function findOne($id){
-        $stmt = $this->db->prepare("SELECT * FROM actor WHERE id = '$id' ");
+        $stmt = $this->db->prepare("SELECT * FROM director WHERE id = '$id' ");
         $res = $stmt->execute();
         if ($res) {
-            $actors = [];
+            $directors = [];
             while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-                $actors[] = $this->createObjectFromFields($row);
+                $directors[] = $this->createObjectFromFields($row);
             }
-            return $actors;
+            return $directors;
         } else {
             throw new \PDOException($stmt->errorInfo()[2]);
         } 
     }
 
-    public function createObjectFromFields($fields): actor
+    public function createObjectFromFields($fields): director
     {
         //
         // liaison entre la donnée BDD et l'objet 
         // ici on voit le chainage ->setId->setName 
         //
-        $actor = new actor();
-        $actor->setId($fields['id'])
+        $director = new director();
+        $director->setId($fields['id'])
               ->setfirst_name($fields['first_name'])
               ->setlast_name($fields['last_name']);
             
 
-        return $actor;
+        return $director;
     }
 
 }

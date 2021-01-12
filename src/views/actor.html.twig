@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Actor{% endblock %}
+
+{% block head %}
+
+  <style>
+
+    form input, select {
+      width: 100%;
+    }
+
+    form textarea {
+      resize: none;
+      width: 100%;
+      min-height: 100px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .comment {
+      padding: 20px 0;
+    }
+
+    .actions {
+      padding: 10px 0;
+    }
+  </style>
+
+  <script>
+  /*
+    window.addEventListener("DOMContentLoaded", function() {
+      var updateComment = document.querySelectorAll('.update-comment');
+
+      updateComment.forEach(function(e){
+        e.addEventListener('click', function(){
+          var viewComment = document.querySelector('#comment-' + e.dataset.id + ' .view-comment');
+          var editComment = document.querySelector('#comment-' + e.dataset.id + ' .edit-comment');
+          viewComment.classList.toggle('hidden');
+          editComment.classList.toggle('hidden');
+        });
+      })
+    });
+    */
+  </script>
+
+{% endblock %}
+
+{% block content %}
+   {% for actor in actors %}
+    {{ actor.first_name }}
+    {{ actor.last_name }}  
+   {% endfor %}
+{% endblock %}

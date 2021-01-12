@@ -45,6 +45,11 @@ $klein->respond('GET','/genres', function() use($fc) {
    $fc->genres(); //appel de la fonction genres du controleur
 });
 
+$klein->respond('GET','/actors', function() use($fc) {
+    
+    $fc->actors();
+});
+
 $klein->dispatch(); 
 
 // autre route / avec fonction() use ($fc) {

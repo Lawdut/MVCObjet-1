@@ -15,19 +15,22 @@ use mvcobjet\Models\Entities\Genre;
 */
 
 use mvcobjet\Models\Services\GenreService; 
+use mvcobjet\Models\Services\ActorService;
 use Twig\Environment;
 
 
 class FrontController
 {
     private $genreService ;
+    private $actorService;
     private $twig;
 
     public function __construct($twig){
     //public function __construct(){
         // instanciation du service Genre
         $this->genreService = new GenreService();
-       // $this->twig = $twig;
+        $this->actorService = new ActorService();
+        $this->twig = $twig;
     }
 
     public function genres() {
@@ -35,25 +38,37 @@ class FrontController
          sur la version précédente j'utilisais DAO directement , ici on passe par les services
              avant :$genreDao = new GenreDao();
              */
-           // $genres = $genreDao->findAll();
+            //$genres = $genreDao->findAll();
        
        $genres = $this->genreService->getAllGenres();
        
-        /*
-            on affichait les genres directement dans le controleur
-            ici on lance le template...
-            foreach($genres as $genre) {
+        
+            /*on affichait les genres directement dans le controleur
+            ici on lance le template...*/
+            /*foreach($genres as $genre) {
                 echo $genre->getName();
-            }
-        */
+            }*/
+        
        
         /*
             on affichait les genres directement dans le controleur
             ici on lance le template php de base
-            Perso: php était déja un moteur de template mais les framework s'évertuenet à utiliser d'autres templates
+            Perso: php était déja un moteur de template mais les framework s'évertuent à utiliser d'autres templates
         */
-        include_once __DIR__.'/../views/genre.php';
-       // echo $this->twig->render('genre.html.twig', [ "genres" => $genres ] );
+        //include_once __DIR__.'/../views/genre.php';
+       echo $this->twig->render('genre.html.twig', [ "genres" => $genres ] );
+
+    }
+
+    public function actors() {
+        
+       
+       $actors = $this->actorService->getAllActors();
+       
+        
+        //include_once __DIR__.'/../views/actor.php';
+       
+       echo $this->twig->render('actor.html.twig', [ "actors" => $actors ] );
 
     }
 }

@@ -24,6 +24,8 @@ class DirectorDao extends BaseDao {
         $stmt = $this->db->prepare("SELECT * FROM director WHERE id = '$id' ");
         $res = $stmt->execute();
         if ($res) {
+
+            //return $stmt->fetchObject(Director::class);
             $directors = [];
             while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
                 $directors[] = $this->createObjectFromFields($row);
@@ -48,5 +50,8 @@ class DirectorDao extends BaseDao {
 
         return $director;
     }
-
 }
+
+/*fetchObject à la place de fetch pour créer un objet
+
+fetchobjet*/

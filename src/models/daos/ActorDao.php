@@ -29,6 +29,7 @@ class ActorDao extends BaseDao {
                 $actors[] = $this->createObjectFromFields($row);
             }
             return $actors;
+            /*Ici on passe en créant un tableau et la fonction ci-dessous (createObject...) permet de créer un objet à partir d'un champ. Voir directordao pour comprender la différence. */
         } else {
             throw new \PDOException($stmt->errorInfo()[2]);
         } 

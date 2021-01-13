@@ -89,8 +89,8 @@ class FrontController
     }
 
     public function director($id) {
-        $directors = $this->directorService->getOneDirector($id);
+        $director = $this->directorService->getOneDirector($id);
         //print_r($directors);
-        echo $this->twig->render('director.html.twig', [ "directors" => $directors ] );
+        echo $this->twig->render('directorOne.html.twig', [ "director" => $director ] );
     }
 }

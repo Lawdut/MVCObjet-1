@@ -1,24 +1,24 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => '92ad085ef82642b185990c36df74f9de996d9d1c',
+    'reference' => '8aee58c7d7d1231959cdbb6141f07d2b1b66ad18',
     'name' => 'jam/mvcobjet',
   ),
   'versions' => 
   array (
     'jam/mvcobjet' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => '92ad085ef82642b185990c36df74f9de996d9d1c',
+      'reference' => '8aee58c7d7d1231959cdbb6141f07d2b1b66ad18',
     ),
     'klein/klein' => 
     array (

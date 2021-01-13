@@ -38,7 +38,7 @@ class DirectorDao extends BaseDao {
         // liaison entre la donnée BDD et l'objet 
         // ici on voit le chainage ->setId->setName 
         //
-        $director = new director();
+        $director = new Director();
         $director->setId($fields['id'])
               ->setfirst_name($fields['first_name'])
               ->setlast_name($fields['last_name']);

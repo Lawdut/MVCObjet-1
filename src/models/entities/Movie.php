@@ -62,11 +62,11 @@ class Movie {
     }
 
     public function getCover_image() : string {
-        $this->coverImage = $coverImage;
         return $this->cover_image;
     }
 
     public function setCover_image(string $coverImage) : Movie {
+        $this->coverImage = $coverImage;
         return $this;
     }
 

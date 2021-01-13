@@ -22,10 +22,6 @@ class MovieDao extends BaseDao {
     
     public function createObjectFromFields($fields): movie
     {
-        //
-        // liaison entre la donnée BDD et l'objet 
-        // ici on voit le chainage ->setId->setName 
-        //
         $movie = new Movie();
         $movie->setId($fields['id'])
               ->setTitle($fields['title'])

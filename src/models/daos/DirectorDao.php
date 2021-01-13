@@ -24,7 +24,6 @@ class DirectorDao extends BaseDao {
         $stmt = $this->db->prepare("SELECT * FROM director WHERE id = :id ");
         $res = $stmt->execute([':id' => $id]);
         if ($res) {
-
             return $stmt->fetchObject(Director::class);
             /*Affichage en créant un objet directement dans la fonction. On ne passe plus par createObject... . Voir actordao pour comprendre la différence. Ici, on va chercher qu'une seule ligne et on l'affiche tel quel */
         } else {

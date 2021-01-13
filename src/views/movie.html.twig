@@ -17,5 +17,12 @@
     </div>
 
     <p>{{ movie.description }}</p>
+
+
+    {% for movie in movies %}
+    {{ movie.actor.first_name }}
+    {{ movie.actor.last_name }}  
+   {% endfor %}
+
 {% endblock %}
 

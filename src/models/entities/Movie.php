@@ -88,12 +88,13 @@ class Movie {
         return $this;
     }
 
-    /*public function getActor() : Actor {
+    public function getActor() : Actor {
         return $this->actor;
     }
 
     public function setActor($actor) : Movie {
         $this->actor = $actor;
         return $this;
-    }*/
+    }
+
 }

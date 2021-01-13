@@ -63,6 +63,11 @@ $klein->respond('GET', '/director/[:id]', function($request) use($fc) {
     $fc->director($request->id);
 });
 
+$klein->respond('GET', '/movie/[:id]', function($request) use($fc) {
+    $fc->movie($request->id);
+
+});
+
 $klein->dispatch(); 
 
 // autre route / avec fonction() use ($fc) {

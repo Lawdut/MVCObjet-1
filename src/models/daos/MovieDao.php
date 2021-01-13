@@ -6,8 +6,8 @@ use mvcobjet\Models\Entities\Movie;
 
 class MovieDao extends BaseDao {
 
-    public function findAll(){
-        $stmt = $this->db->prepare("SELECT * FROM movie INNER JOIN genre ON movie.genre_id = genre.id");
+    public function findMovie($id){
+        $stmt = $this->db->prepare("SELECT * FROM movie WHERE id = '$id'");
         $res = $stmt->execute();
         if ($res) {
             $movies = [];
@@ -26,15 +26,15 @@ class MovieDao extends BaseDao {
         // liaison entre la donnée BDD et l'objet 
         // ici on voit le chainage ->setId->setName 
         //
-        $movie = new movie();
+        $movie = new Movie();
         $movie->setId($fields['id'])
               ->setTitle($fields['title'])
-              ->setDescription($fields['description']);
-              ->setDuration($fields['duration']);
-              ->setDate($fields['date']);
+              ->setDescription($fields['description'])
+              ->setDuration($fields['duration'])
+              ->setDate(\DateTime::createFromFormat('Y-m-d', $fields['date']))
               ->setCover_image($fields['cover_image']);
-              ->setGenre_id($fields['genre_id']);
-              ->setDirector_id($fields['director_id']);
+              /*->setGenre_id($fields['genre_id'])
+              ->setDirector_id($fields['director_id']);*/
             
 
         return $movie;

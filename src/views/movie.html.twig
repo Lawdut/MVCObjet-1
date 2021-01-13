@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Movies{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+    <h1> {{ movie.title }} {{ movie.date | date('d/m/Y') }} <h1>
+    <small>
+        {#{{movie.genre.name}} - {{movie.director.firstName}} {{movie.director.lastName}}#}
+    </small>
+    {{ movie.duration }}
+    <div>
+        <img src="{{ movie.coverImage }}" width="100">
+    </div>
+
+    <p>{{ movie.description }}</p>
+{% endblock %}
+

@@ -2,7 +2,7 @@
 
 namespace mvcobjet\Models\Services;
 
-use mvcobjet\Models\Daos\directorDao;
+use mvcobjet\Models\Daos\DirectorDao;
 use mvcobjet\Models\Entities\director;
 
 

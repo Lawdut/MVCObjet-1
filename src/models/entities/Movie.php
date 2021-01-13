@@ -2,6 +2,8 @@
 
 namespace mvcobjet\Models\Entities;
 
+use DateTime;
+
 class Movie {
 
     private $id;
@@ -10,8 +12,8 @@ class Movie {
     private $duration;
     private $date;
     private $cover_image;
-    private $genre_id;
-    private $director_id;
+    /*private $genre_id;
+    private $director_id;*/
 
     public function getId() : int {
         return $this->id;
@@ -27,7 +29,8 @@ class Movie {
         return $this->title;
     }
 
-    public function setTitle() : Movie {
+    public function setTitle(string $title) : Movie {
+        $this->title = $title;
         return $this;
     }
 
@@ -35,7 +38,8 @@ class Movie {
         return $this->description;
     }
 
-    public function setDescription() : Movie {
+    public function setDescription(string $description) : Movie {
+        $this->description = $description;
         return $this;
     }
 
@@ -43,27 +47,30 @@ class Movie {
         return $this->duration;
     }
 
-    public function setDuration() : Movie {
+    public function setDuration(string $duration) : Movie {
+        $this->duration = $duration;
         return $this;
     }
 
-    public function getDate() : string {
+    public function getDate() : \DateTime {
         return $this->date;
     }
 
-    public function setDate() : Movie {
+    public function setDate(DateTime $date) : Movie {
+        $this->date = $date;
         return $this;
     }
 
     public function getCover_image() : string {
+        $this->coverImage = $coverImage;
         return $this->cover_image;
     }
 
-    public function setCover_image() : Movie {
+    public function setCover_image(string $coverImage) : Movie {
         return $this;
     }
 
-    public function getGenre_id() : int {
+    /*public function getGenre_id() : int {
         return $this->genre_id;
     }
 
@@ -77,5 +84,5 @@ class Movie {
 
     public function setDirector_id() : Movie {
         return $this;
-    }
+    }*/
 }

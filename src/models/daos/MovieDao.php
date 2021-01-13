@@ -10,11 +10,9 @@ class MovieDao extends BaseDao {
         $stmt = $this->db->prepare("SELECT * FROM movie WHERE id = '$id'");
         $res = $stmt->execute();
         if ($res) {
-            $movies = [];
-            while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-                $movies[] = $this->createObjectFromFields($row);
-            }
-            return $movies;
+            
+                return $this->createObjectFromFields($stmt->fetch(\PDO::FETCH_ASSOC));
+            
         } else {
             throw new \PDOException($stmt->errorInfo()[2]);
         }

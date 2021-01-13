@@ -101,7 +101,7 @@ class FrontController
     public function movie($id) {
 
         $movie = $this->movieService->getOneMovie($id);
-        print_r($movie);
+        //print_r($movie);
         echo $this->twig->render('movie.html.twig', [ "movie" => $movie ] );  
     }
 }

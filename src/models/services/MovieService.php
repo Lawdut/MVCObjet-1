@@ -12,7 +12,7 @@ class MovieService {
 
     public function __construct() {
 
-        $this->movieDao = new MovieDao;
+        $this->movieDao = new MovieDao();
     
     }
 

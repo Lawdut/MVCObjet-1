@@ -6,7 +6,7 @@ use mvcobjet\Models\Entities\Movie;
 
 class MovieDao extends BaseDao {
 
-    public function findMovie($id){
+    public function findByMovie($id){
         $stmt = $this->db->prepare("SELECT * FROM movie WHERE id = '$id'");
         $res = $stmt->execute();
         if ($res) {
@@ -26,9 +26,7 @@ class MovieDao extends BaseDao {
               ->setDescription($fields['description'])
               ->setDuration($fields['duration'])
               ->setDate(\DateTime::createFromFormat('Y-m-d', $fields['date']))
-              ->setCover_image($fields['cover_image']);
-              /*->setGenre_id($fields['genre_id'])
-              ->setDirector_id($fields['director_id']);*/
+              ->setCoverImage($fields['cover_image']);
             
 
         return $movie;

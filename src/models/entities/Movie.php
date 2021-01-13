@@ -11,9 +11,9 @@ class Movie {
     private $description;
     private $duration;
     private $date;
-    private $cover_image;
-    /*private $genre_id;
-    private $director_id;*/
+    private $coverImage;
+    private $genre;
+    private $director;
 
     public function getId() : int {
         return $this->id;
@@ -61,28 +61,39 @@ class Movie {
         return $this;
     }
 
-    public function getCover_image() : string {
-        return $this->cover_image;
+    public function getCoverImage() : string {
+        return $this->coverImage;
     }
 
-    public function setCover_image(string $coverImage) : Movie {
+    public function setCoverImage(string $coverImage) : Movie {
         $this->coverImage = $coverImage;
         return $this;
     }
 
-    /*public function getGenre_id() : int {
-        return $this->genre_id;
+    public function getGenre() : Genre {
+        return $this->genre;
     }
 
-    public function setGenre_id() : Movie {
+    public function setGenre(Genre $genre) : Movie {
+        $this->genre = $genre;
         return $this;
     }
 
-    public function getDirector_id() : int {
-        return $this->director_id;
+    public function getDirector() : Director {
+        return $this->director;
     }
 
-    public function setDirector_id() : Movie {
+    public function setDirector(Director $director) : Movie {
+        $this->director = $director;
+        return $this;
+    }
+
+    /*public function getActor() : Actor {
+        return $this->actor;
+    }
+
+    public function setActor($actor) : Movie {
+        $this->actor = $actor;
         return $this;
     }*/
 }

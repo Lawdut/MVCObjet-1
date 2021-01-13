@@ -88,7 +88,7 @@ class FrontController
     public function directorS() {
 
         $directors = $this->directorService->getAllDirectors();
-        //print_r($directors);
+        print_r($directors);
         echo $this->twig->render('director.html.twig', [ "directors" => $directors ] );
     }
 

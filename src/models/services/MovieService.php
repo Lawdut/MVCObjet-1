@@ -40,9 +40,12 @@ class MovieService {
         $movie->setDirector($director);
 
         $actors = $this->actorDao->findByMovie($id);
-            foreach ($actors as $actor){
+        $movie->setActor($actors);
+
+        
+            /*foreach ($actors as $actor){
                 $movie->setActor($actor);
-            }
+            }*/
 
         return $movie;
     }

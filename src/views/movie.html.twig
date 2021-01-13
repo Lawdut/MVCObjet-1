@@ -9,8 +9,9 @@
 {% block content %}
     <h1> {{ movie.title }} {{ movie.date  | date('d/m/Y')}} <h1>
     <small>
-        {{movie.genre.name}} - {{movie.director.first_name}} {{movie.director.last_name}}
+        {{movie.genre.name}} - {{movie.director.first_name}}  {{movie.director.last_name}}
     </small>
+    <br>
     {{ movie.duration }}
     <div>
         <img src="{{ movie.coverImage }}" width="100">
@@ -18,11 +19,12 @@
 
     <p>{{ movie.description }}</p>
 
-
-    {% for movie in movies %}
-    {{ movie.actor.first_name }}
-    {{ movie.actor.last_name }}  
+    <div>
+    {% for actor in movie.actor %}
+    {{ actor.first_name }} 
+    {{ actor.last_name }} <br> 
    {% endfor %}
+   </div>
 
 {% endblock %}
 

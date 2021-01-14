@@ -42,11 +42,21 @@ class MovieService {
         $actors = $this->actorDao->findByMovie($id);
         $movie->setActor($actors);
 
-        
-            /*foreach ($actors as $actor){
-                $movie->setActor($actor);
-            }*/
 
         return $movie;
+    }
+
+    public function create($movieData) {
+        
+        $movie = $this->movieDao->createObjectFromFields($movieData);
+
+        $genre = $this->genreDao->findByMovie('genre');
+        $movie->setGenre($genre);
+
+        $director = $this->directorDao->findByMovie('director');
+        $movie->setDirector($director);
+
+        $this->movieDao->create($movie);
+
     }
 }

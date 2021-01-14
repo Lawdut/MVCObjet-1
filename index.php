@@ -2,7 +2,8 @@
 
 require_once "vendor/autoload.php";
 
-use mvcobjet\controllers\FrontController; 
+use mvcobjet\controllers\FrontController;
+use mvcobjet\controllers\BackController; 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
@@ -16,6 +17,7 @@ $twig = new Environment($loader, ['cache' => false]);
 // use MvcObjet\Controllers\FrontController as FrontController
 
 $fc = new FrontController($twig);
+$bc = new BackController($twig);
 //$fc = new FrontController();
 
 // pour klein redirection .htaccess
@@ -66,6 +68,10 @@ $klein->respond('GET', '/director/[:id]', function($request) use($fc) {
 $klein->respond('GET', '/movie/[:id]', function($request) use($fc) {
     $fc->movie($request->id);
 
+});
+
+$klein->respond ('POST','/addmovie', function($request,$post) use($bc) {
+    $bc->addMovie($request->paramsPost());
 });
 
 $klein->dispatch(); 

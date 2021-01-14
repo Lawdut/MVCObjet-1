@@ -70,7 +70,7 @@ $klein->respond('GET', '/movie/[:id]', function($request) use($fc) {
 
 });
 
-$klein->respond ('POST','/addmovie', function($request,$post) use($bc) {
+$klein->respond ('POST','/addmovie', function($request, $post) use($bc) {
     $bc->addMovie($request->paramsPost());
 });
 

@@ -18,7 +18,7 @@ class MovieDao extends BaseDao {
         }
     } 
     
-    public function createObjectFromFields($fields): movie
+    public function createObjectFromFields($fields): Movie
     {
         $movie = new Movie();
         $movie->setId($fields['id'])
@@ -37,7 +37,7 @@ class MovieDao extends BaseDao {
 
         $stmt= $this->db->prepare("
         INSERT INTO movie(title, description, duration, date, cover_image, genre_id, director_id) 
-        VALUES(:title, :description, :duration, :date, :cover_image, :genre_id, :director_id");
+        VALUES(:title, :description, :duration, :date, :cover_image, :genre_id, :director_id)");
 
         $res = $stmt->execute([
             ':title' => $movie->getTitle(),

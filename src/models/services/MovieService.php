@@ -47,13 +47,13 @@ class MovieService {
     }
 
     public function create($movieData) {
-        
+
         $movie = $this->movieDao->createObjectFromFields($movieData);
 
-        $genre = $this->genreDao->findByMovie('genre');
+        $genre = $this->genreDao->findByMovie($movieData['genre']);
         $movie->setGenre($genre);
 
-        $director = $this->directorDao->findByMovie('director');
+        $director = $this->directorDao->findByMovie($movieData['director']);
         $movie->setDirector($director);
 
         $this->movieDao->create($movie);

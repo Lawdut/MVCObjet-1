@@ -19,7 +19,7 @@ class Movie {
         return $this->id;
     }
 
-    public function setId (int $id) : Movie {
+    public function setId ($id) : Movie {
 
         $this->id = $id;
         return $this;

@@ -8,16 +8,20 @@
 
 {% block content %}
     <tr>    
-                <form action ="addmovie"> Ajouter un film <method="POST">
+                <h1> Ajouter un film à la BDD </h1>
+                <form action ="addmovie" method="POST"> 
 
-                <td><label for = "id"></label><input type ="text"  name = 'titre' value = ''></td>
-                <td><label for = "id"></label><input type ="text"  name = 'description' value = ''></td>
-                <td><label for = "id"></label><input type ="text"  name = 'duration' value = ''></td>
-                <td><label for = "id"></label><input type ="date"  name = 'date' value = ''></td>
-                <td><label for = "id"></label><input type ="text"  name = 'cover_image' value = ''></td>
-                <td><label for = "id"></label><input type ="text"  name = 'genre_id' value = ''></td>
-                <td><label for = "id"></label><input type ="text"  name = 'director_id' value = ''></td>
+                <td><label for = "title"></label><p> Titre</p><input type ="text"  name = 'title'></td>
+                <td><label for = "description"></label><p> Description</p><input type ="text"  name = 'description' ></td>
+                <td><label for = "duration"></label><p> Durée</p><input type ="text"  name = 'duration' ></td>
+                {#<td><label for = "date"></label><p> Date</p><input type ="date"  name = 'date' ></td>#}
+                <td><label for = "date"></label><p> Date</p><input type ="text"  name = 'date' ></td>
+                <td><label for = "cover_image"></label><p> Affiche</p><input type ="text"  name = 'cover_image' ></td>
+                <td><label for = "genre"></label><p> Genre</p><input type ="text"  name = 'genre' ></td>
+                <td><label for = "director"></label><p> Réalisateur</p><input type ="text"  name = 'director' ></td>
                 <td><input type = "submit" value = "Ajouter"></td>
-
+                </form>
                 </tr>
+
+                
 {% endblock %}

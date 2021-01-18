@@ -39,6 +39,12 @@ class FrontController
         $this->twig = $twig;
     }
 
+    public function debug($variable){
+        echo '<pre>';
+        print_r($variable);
+        echo '</pre>';
+    }
+
     public function genres() {
         /* 
          sur la version précédente j'utilisais DAO directement , ici on passe par les services
@@ -103,5 +109,9 @@ class FrontController
         $movie = $this->movieService->getOneMovie($id);
         //print_r($movie);
         echo $this->twig->render('movie.html.twig', [ "movie" => $movie ] );  
+    }
+
+    public function createMovie() {
+        echo $this->twig->render('addMovie.html.twig');
     }
 }

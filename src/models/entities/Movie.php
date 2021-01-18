@@ -14,6 +14,7 @@ class Movie {
     private $coverImage;
     //private $genre;
     //private $director;
+    //private $actor;
 
     public function getId() : int {
         return $this->id;

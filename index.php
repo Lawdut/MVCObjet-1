@@ -70,13 +70,17 @@ $klein->respond('GET', '/movie/[:id]', function($request) use($fc) {
 
 });
 
+$klein->respond('GET','/createMovie', function() use($fc) {
+    $fc->createMovie();
+});
+
 $klein->respond ('POST','/addmovie', function($request, $post) use($bc) {
     $bc->addMovie($request->paramsPost());
 });
 
-$klein->respond('POST','/addactor', function($request, $post) use($bc) {
+/*$klein->respond('POST','/addactor', function($request, $post) use($bc) {
     $bc->addActor($request->paramsPost());
-});
+});*/
 
 $klein->dispatch(); 
 

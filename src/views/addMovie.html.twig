@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Ajout d'un film{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+    <tr>    
+                <form action ="addmovie"> Ajouter un film <method="POST">
+
+                <td><label for = "id"></label><input type ="text"  name = 'titre' value = ''></td>
+                <td><label for = "id"></label><input type ="text"  name = 'description' value = ''></td>
+                <td><label for = "id"></label><input type ="text"  name = 'duration' value = ''></td>
+                <td><label for = "id"></label><input type ="date"  name = 'date' value = ''></td>
+                <td><label for = "id"></label><input type ="text"  name = 'cover_image' value = ''></td>
+                <td><label for = "id"></label><input type ="text"  name = 'genre_id' value = ''></td>
+                <td><label for = "id"></label><input type ="text"  name = 'director_id' value = ''></td>
+                <td><input type = "submit" value = "Ajouter"></td>
+
+                </tr>
+{% endblock %}

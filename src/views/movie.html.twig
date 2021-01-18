@@ -7,22 +7,25 @@
 {% endblock %}
 
 {% block content %}
-    <h1> {{ movie.title }} {{ movie.date  | date('d/m/Y')}} <h1>
-    <small>
-        {{movie.genre.name}} - {{movie.director.first_name}}  {{movie.director.last_name}}
-    </small>
+    <h1> {{ movie.title }}  <h1>
+    <h2>
+        {{movie.genre.name}} - {{movie.director.first_name}}  {{movie.director.last_name}} - {{ movie.date  | date('d/m/Y')}}
+    </h2>
     <br>
-    {{ movie.duration }}
+    
     <div>
         <img src="{{ movie.coverImage }}" width="100">
+        
     </div>
-
+    <p>{{ movie.duration }}</p>
     <p>{{ movie.description }}</p>
 
     <div>
     {% for actor in movie.actor %}
-    {{ actor.first_name }} 
-    {{ actor.last_name }} <br> 
+    <pre>
+    {{ actor.first_name }}
+    {{ actor.last_name }}
+    </pre> 
    {% endfor %}
    </div>
 

@@ -21,4 +21,8 @@ class BackController {
         $this->movieService->create($movieData);
         //print_r($movieData);
     }
+
+    public function updateMovie() {
+        
+    }
 }

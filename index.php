@@ -82,6 +82,12 @@ $klein->respond ('POST','/addmovie', function($request, $post) use($bc) {
     $bc->addActor($request->paramsPost());
 });*/
 
+/*$route->respond('POST','/updatemovie/[:id]', function($request,$post) use($bc) {
+    print_r($request->id);
+    print_r($request->paramsPost());
+    $bc->updateMovie($request->id , $request->paramsPost());
+ });*/
+
 $klein->dispatch(); 
 
 // autre route / avec fonction() use ($fc) {

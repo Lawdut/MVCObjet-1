@@ -51,7 +51,7 @@ class MovieService {
         $movie = $this->movieDao->createObjectFromFields($movieData);
 
         $genre = $this->genreDao->findByMovie($movieData['genre']);
-        print_r($genre);
+        //print_r($genre);
         $movie->setGenre($genre);
 
         $director = $this->directorDao->findByMovie($movieData['director']);

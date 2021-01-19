@@ -14,11 +14,38 @@
                 <td><label for = "title"></label><p> Titre</p><input type ="text"  name = 'title'></td>
                 <td><label for = "description"></label><p> Description</p><input type ="text"  name = 'description' ></td>
                 <td><label for = "duration"></label><p> Durée</p><input type ="text"  name = 'duration' ></td>
-                {#<td><label for = "date"></label><p> Date</p><input type ="date"  name = 'date' ></td>#}
-                <td><label for = "date"></label><p> Date</p><input type ="text"  name = 'date' ></td>
+                <td><label for = "date"></label><p> Date</p><input type ="date"  name = 'date' ></td>
+                {#<td><label for = "date"></label><p> Date</p><input type ="text"  name = 'date' ></td>#}
                 <td><label for = "cover_image"></label><p> Affiche</p><input type ="text"  name = 'cover_image' ></td>
-                <td><label for = "genre"></label><p> Genre</p><input type ="text"  name = 'genre' ></td>
-                <td><label for = "director"></label><p> Réalisateur</p><input type ="text"  name = 'director' ></td>
+
+
+                <td>
+                <label for = "genre"></label><p> Genre</p>
+                
+                <select name='genre'>
+
+                {% for genre in genres %}
+                <option value ='{{ genre.id }}'>{{genre.name}}</option>
+                {% endfor %}
+                
+                </select>
+
+                </td>
+
+
+                <td>
+                <label for = "director"></label><p> Réalisateur</p>
+                
+                <select name='director'>
+
+                {% for director in directors %}
+                <option value ='{{ director.id }}'>{{director.first_name}} {{director.last_name}}</option>
+                {% endfor %}
+
+                </select>
+                
+                </td>
+
                 <td><input type = "submit" value = "Ajouter"></td>
                 </form>
                 </tr>

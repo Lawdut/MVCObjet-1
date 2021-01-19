@@ -112,6 +112,8 @@ class FrontController
     }
 
     public function createMovie() {
-        echo $this->twig->render('addMovie.html.twig');
+        $directors = $this->directorService->getAllDirectors();
+        $genres = $this->genreService->getAllGenres();
+        echo $this->twig->render('addMovie.html.twig', ["directors"=> $directors ,"genres" => $genres] );
     }
 }
